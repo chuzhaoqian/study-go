@@ -31,8 +31,10 @@ func (m *CourseLessonLearn_20180308_134359) Up() {
 		"`create_time` datetime NOT NULL COMMENT '创建时间'," +
 		"`update_time` datetime NOT NULL COMMENT '更新时间'," +
 		"PRIMARY KEY (`id`)," +
-		"KEY `user_course` (`user_id`,`course_id`) USING BTREE," +
-		"KEY `course_lesson` (`course_id`,`course_lesson_id`) USING BTREE" +
+		"KEY `IDX_USER_COURSE` (`user_id`,`course_id`) USING BTREE," +
+		"KEY `IDX_COURSE_LESSON` (`course_id`,`course_lesson_id`) USING BTREE" +
+		"KEY `IDX_CTIME` (`create_time`)" +
+		"KEY `IDX_UTIME` (`update_time`)" +
 		") ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='课程学习表'")
 }
 

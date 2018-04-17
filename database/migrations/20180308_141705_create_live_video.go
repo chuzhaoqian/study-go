@@ -35,8 +35,10 @@ func (m *LiveVideo_20180308_141705) Up() {
 		"`create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'," +
 		"`update_time` datetime NOT NULL COMMENT '更新时间'," +
 		"PRIMARY KEY (`id`)," +
-		"KEY `live_video` (`live_id`,`video_id`) USING BTREE," +
-		"KEY `live` (`live_id`) USING BTREE" +
+		"KEY `IDX_LIVE_VIDEO` (`live_id`,`video_id`) USING BTREE," +
+		"KEY `IDX_LIVE` (`live_id`) USING BTREE" +
+		"KEY `IDX_CTIME` (`create_time`)" +
+		"KEY `IDX_UTIME` (`update_time`)" +
 		") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='直播视频录像'")
 }
 

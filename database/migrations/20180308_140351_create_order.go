@@ -38,6 +38,8 @@ func (m *Order_20180308_140351) Up() {
 		"PRIMARY KEY (`id`)," +
 		"KEY `sn` (`sn`) USING BTREE," +
 		"KEY `user_id` (`user_id`) USING BTREE" +
+		"KEY `IDX_CTIME` (`create_time`)" +
+		"KEY `IDX_UTIME` (`update_time`)" +
 		") ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单信息表'")
 }
 

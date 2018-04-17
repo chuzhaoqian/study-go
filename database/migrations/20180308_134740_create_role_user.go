@@ -28,8 +28,10 @@ func (m *RoleUser_20180308_134740) Up() {
 		"`create_time` datetime NOT NULL COMMENT '创建时间'," +
 		"`update_time` datetime NOT NULL COMMENT '更新时间'," +
 		"PRIMARY KEY (`id`)," +
-		"KEY `group_id` (`role_id`) USING BTREE," +
-		"KEY `user_id` (`user_id`) USING BTREE" +
+		"KEY `IDX_GROUP` (`role_id`) USING BTREE," +
+		"KEY `IDX_USER` (`user_id`) USING BTREE" +
+		"KEY `IDX_CTIME` (`create_time`)" +
+		"KEY `IDX_UTIME` (`update_time`)" +
 		") ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='角色与管理员关联表'")
 }
 

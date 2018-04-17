@@ -28,6 +28,8 @@ func (m *CourseTeacher_20180308_132752) Up() {
 		"`create_time` datetime NOT NULL COMMENT '创建时间'," +
 		"`update_time` datetime NOT NULL COMMENT '最后更新时间'," +
 		"PRIMARY KEY (`id`)" +
+		"KEY `IDX_CTIME` (`create_time`)" +
+		"KEY `IDX_UTIME` (`update_time`)" +
 		") ENGINE=InnoDB DEFAULT CHARSET=utf8 CHARSET=utf8 COMMENT='课程老师表'")
 }
 

@@ -35,15 +35,15 @@ func Regist(user map[string]string) (userId int64, err error) {
 		return 0, RegistInfoError
 	}
 
-	if _, ok := user["password"]; ok == false {
+	if _, ok := user["password"]; !ok {
 		return 0, MissingPassword
 	}
 
-	if _, ok := user["account"]; ok == false {
+	if _, ok := user["account"]; !ok {
 		return 0, MissingAccount
 	}
 
-	if _, ok := user["nickname"]; ok == false {
+	if _, ok := user["nickname"]; !ok {
 		return 0, MissingNickname
 	}
 
@@ -115,8 +115,6 @@ func Login(account string, password string) (user *models.User, err error) {
 		return
 	}
 
-	//fmt.Println(crypto.Md5(password+userTmp.Salt))
-	//fmt.Println(userTmp.Password)
 	if crypto.Md5(password+userTmp.Salt) != userTmp.Password {
 		err = IncorrectPassword
 		return

@@ -28,7 +28,9 @@ func (m *CourseMember_20180308_133648) Up() {
 		"`create_time` datetime NOT NULL COMMENT '创建时间'," +
 		"`update_time` datetime NOT NULL COMMENT '最后更新时间'," +
 		"PRIMARY KEY (`id`)," +
-		"KEY `course` (`course_id`) USING BTREE" +
+		"KEY `IDX_COURSE` (`course_id`) USING BTREE" +
+		"KEY `IDX_CTIME` (`create_time`)" +
+		"KEY `IDX_UTIME` (`update_time`)" +
 		")  ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='课程授课班学生表'")
 }
 

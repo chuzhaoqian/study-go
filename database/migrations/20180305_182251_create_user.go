@@ -38,6 +38,8 @@ func (m *User_20180305_182251) Up() {
 		"`create_time` datetime NOT NULL COMMENT '注册时间'," +
 		"`update_time` datetime NOT NULL COMMENT '修改时间'," +
 		"PRIMARY KEY (`id`)" +
+		"KEY `IDX_CTIME` (`create_time`)" +
+		"KEY `IDX_UTIME` (`update_time`)" +
 		")ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户信息主表'")
 }
 

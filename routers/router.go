@@ -144,11 +144,6 @@ func init() {
 			),
 		),
 
-		beego.NSNamespace("/user",
-			beego.NSInclude(
-				&controllers.UserController{},
-			),
-		),
 
 		beego.NSNamespace("/user_notify",
 			beego.NSInclude(

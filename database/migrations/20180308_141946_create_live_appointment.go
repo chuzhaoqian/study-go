@@ -29,8 +29,10 @@ func (m *LiveAppointment_20180308_141946) Up() {
 		"`create_time` datetime NOT NULL COMMENT '创建时间'," +
 		"`update_time` datetime NOT NULL COMMENT '更新时间'," +
 		"PRIMARY KEY (`id`)," +
-		"KEY `user` (`user_id`) USING BTREE," +
-		"KEY `live_user` (`live_id`,`user_id`) USING BTREE" +
+		"KEY `IDX_USER` (`user_id`) USING BTREE," +
+		"KEY `IDX_LIVE_USER` (`live_id`,`user_id`) USING BTREE" +
+		"KEY `IDX_CTIME` (`create_time`)" +
+		"KEY `IDX_UTIME` (`update_time`)" +
 		") ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='直播预约'")
 }
 

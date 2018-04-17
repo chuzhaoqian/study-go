@@ -32,8 +32,10 @@ func (m *Role_20180308_134538) Up() {
 		"`create_time` datetime NOT NULL COMMENT '创建时间'," +
 		"`update_time` datetime NOT NULL COMMENT '更新时间'," +
 		"PRIMARY KEY (`id`)," +
-		"KEY `parentId` (`pid`) USING BTREE," +
-		"KEY `status` (`status`) USING BTREE" +
+		"KEY `IDX_PID` (`pid`) USING BTREE," +
+		"KEY `IDX_STATUS` (`status`) USING BTREE" +
+		"KEY `IDX_CTIME` (`create_time`)" +
+		"KEY `IDX_UTIME` (`update_time`)" +
 		") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色表'")
 }
 
